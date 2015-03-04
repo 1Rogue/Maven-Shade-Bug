@@ -9,28 +9,18 @@
 
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/repositories/public/</url>
-        </repository>
-        <repository>
             <id>codelanx-repo</id>
             <url>http://repo.codelanx.com/content/repositories/public/</url>
         </repository>
     </repositories>
-    <licenses>
-        <license>
-            <name>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</name>
-            <url>https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-  
+
     <build>
         <plugins>
+            <!-- Attempts to force different assembly plugins -->
             <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
+                <version>2.5.3</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -68,14 +58,9 @@
         </resources>
         <finalName>${project.name}</finalName>
     </build>
-  
+
+    <!-- The parent dependency with static interface methods -->
     <dependencies>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>LATEST</version>
-            <type>jar</type>
-        </dependency>
         <dependency>
             <groupId>com.codelanx</groupId>
             <artifactId>codelanxlib</artifactId>
@@ -84,6 +69,7 @@
         </dependency>
     </dependencies>
 
+    <!-- Compile to 1.8 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
