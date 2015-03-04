@@ -5,8 +5,9 @@
  */
 package com.codelanx.bugexample;
 
-import com.codelanx.codelanxlib.CodelanxPlugin;
-import com.codelanx.codelanxlib.config.ConfigMarker;
+import com.codelanx.codelanxlib.command.TabInfo;
+import java.util.ArrayList;
+
 
 /**
  * Class description for {@link BugExample}
@@ -15,10 +16,11 @@ import com.codelanx.codelanxlib.config.ConfigMarker;
  * @author 1Rogue
  * @version 1.0.0
  */
-public class BugExample extends CodelanxPlugin<BugExample> {
+public class BugExample {
 
-    public <T extends Enum<T> & ConfigMarker<T>> BugExample(String command, Class<T> config) {
-        super(command, config);
+    public void foo() {
+        TabInfo info = new TabInfo();
+        info.map(0, () -> new ArrayList<>());
     }
 
 }
